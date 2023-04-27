@@ -1,0 +1,23 @@
+{% extends "./navbar.html" %}
+{% block content %}
+<style>
+    .iframecontainer{
+        position:relative;
+        width:50%;
+        z-index:-1;
+    }
+    .iframecontent{
+        position:absolute;
+        top:-122px;
+        left:112px;
+        width:900px;
+        height:2000px;
+        overflow:hidden;
+
+    }
+</style>
+
+<div class="iframecontainer">
+    <iframe class="iframecontent" src="https://www.businessinsider.in/business/startups/article" scrolling="no"></iframe>
+</div>
+{% endblock %}

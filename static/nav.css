@@ -1,0 +1,57 @@
+.navbar {
+    background-color: #da6d87 !important; 
+    color: white !important;
+    padding:2px 0px;
+}
+
+.btn-group{
+    background-color: #da6d87 ;
+}
+nav{
+    position:absolute;
+    z-index: 10;
+}
+
+.navbar-brand  {
+    color: white !important;
+}
+a {
+    color: white !important;
+}
+.logo {
+    height: 5%;
+    width: 5%;
+    margin-top: 0px;
+    background-color: aliceblue;
+    border-radius: 50%;
+}
+
+
+
+.btn-outline-success {
+    --bs-btn-hover-bg: #084298;
+    --bs-btn-border-color: white !important;
+    color:white !important;
+}
+.btn-group-vertical>.btn, .btn-group>.btn {
+    position: relative;
+    flex: 1 1 auto;
+    margin-left: 72%;
+    margin-right: 11%;
+}
+
+
+.dropimg {
+    width: 35%;
+    height: 110%;
+}
+
+.dropdown-menu[data-bs-popper] {
+    top: 100%;
+    left: 460px;
+    margin-top: var(--bs-dropdown-spacer);
+}
+
+.dropdown-item {
+    color: black !important;
+}

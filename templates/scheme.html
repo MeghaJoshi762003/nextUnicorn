@@ -1,0 +1,22 @@
+{% extends "./navbar.html" %}
+{% block content %}
+<style>
+    .iframecontainer{
+        position:relative;
+        width:50%;
+        z-index:-1;
+    }
+    .iframecontent{
+        position:absolute;
+        top:-198px;
+        left:112px;
+        width:900px;
+        height:30000px;
+        overflow:hidden;
+
+    }
+</style>
+<div class="iframecontainer">
+<iframe class="iframecontent" src="https://startuptalky.com/list-of-government-initiatives-for-startups/#:~:text=Pradhan%20Mantri%20Mudra%20Yojana%20(PMMY),-Mudra%20Bank%20%7C%20Government&text=The%20MUDRA%20banks%20provide%20startup,launched%20on%208%20April%202015." scrolling="no"></iframe>
+</div>
+{% endblock %}
