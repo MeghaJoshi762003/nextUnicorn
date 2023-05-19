@@ -1,0 +1,77 @@
+{% extends "./navbar.html" %}
+{% block content %}
+<link rel="stylesheet" href="/static/about.css" />
+      <section class="intro"  id="home">
+        <div class="intro-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 col-xs-12 intro-image">
+                <img src="/static/hand.png" alt="" />
+              </div>
+              <div class="col-md-8 col-sm-6 col-xs-12 intro-texts">
+                <h1>Showcase your ideas Here</h1>
+                <i><span>Boost your business-ways to get your startup off the ground</span></i>
+                <p style="color:white;">This is a platform where startup's could share there view's about there startup , story's, services. where people could give opinion to the startup about what they linke and not like in that startup</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="features" id="features">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 wow fadeIn">
+              <h2>Some of our Glances</h2>
+            </div>
+            <div class="col-md-3 col-sm-6 wow fadeInLeft">
+              <div class="single-service">
+                <p><img class="ss"src="/static/homepage.png" alt="schemes"></p>
+                <br><br><br><br><br>
+                <p><a href="home">Home</a></p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 wow fadeInLeft">
+              <div class="single-service">
+                <p><img class="ss"src="/static/schemes.png" alt="articles"></p>
+                <br><br><br><br><br>
+                <p><a href="schemes">Schemes</a></p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 wow fadeInRight">
+              <div class="single-service">
+                <p><img class="ss"src="/static/articles.png" alt="Post"></p>
+                <br><br><br><br><br>
+                <p><a href="articles">Articles</a></p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 wow fadeInRight">
+              <div class="single-service">
+                <p><img class="ss"src="/static/suggestion.png" alt="profile"></p>
+                <br><br><br><br><br>
+                <p><a style="margin-top:20px;" href="Suggestionbox">Suggestion</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="footer">
+        <section class="contact" id="contact">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h2 style="text-decoration:none;">Get In Touch</h2>
+                <form action="about" method="POST">
+                  {% csrf_token %}
+                  <input  class="wow slideInLeft" type="text" name="name" placeholder="Your Name" required />
+                  <input class="wow slideInRight" type="text" name="email" placeholder="Your Email" required />
+                  <textarea class="wow slideInLeft" name="opinion" placeholder="Your Message" required></textarea>
+                  <input class="wow slideInRight" type="submit" value="Send Message" />
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+    {% endblock %}
+      

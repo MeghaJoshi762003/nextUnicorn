@@ -1,0 +1,77 @@
+{% extends "./navbar.html" %}
+{% block content %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Lora:ital@1&display=swap" rel="stylesheet">
+<style>
+  img{
+    width:100%;
+    
+  }
+  .col-8{
+    margin-top:5%;
+  }
+  .col-4{
+    padding-left:0px;
+    margin-top:20px;
+  }
+  .second{
+    margin-top:10px;
+  }
+  .heading
+  {
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-family: 'Lora', serif;
+    font-size:2rem;
+    color:#3f2866;
+  }
+  .border{
+    margin-bottom:4px;
+    border-color:#da6d87;
+  }
+  .col-9{
+    padding-left:40px;
+  }
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <img src="/static/suggestionbox.png">
+    </div>
+    <div class="col-8">
+      <form action="suggestionbox" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">To userid</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter the userid" name="to">
+    </div>
+    <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Opinion</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content" placeholder="Share your view's"></textarea>
+    </div>
+    <button type="submit" class="btn btn-outline-success">Suggest</button>
+    </form>
+  </div>
+  <div class="row second">
+  <hr>
+  <p class="heading">Your Suggestion's</p>
+  </div>
+  </div>
+ 
+    {% for p in suggestions %}
+    {% if p.by == userid %}
+    <div class="row border border-danger rounded">
+    <div class="col-3">
+     <i> Suggested to</i>: {{p.to}}<br>
+      {{p.date}}
+    </div>
+    <div class="col-9">
+      {{p.opinion}}
+    </div>
+  </div>
+    {% endif %}
+    {% endfor %}
+  
+</div>
+
+{% endblock %}

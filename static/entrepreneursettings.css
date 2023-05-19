@@ -1,0 +1,336 @@
+/* 
+  Inspired from 
+  Settings - Daily UI 007
+  by Dillon Morris
+  https://dribbble.com/shots/4290939-Settings-Daily-UI-007
+*/
+
+body,html{
+    height:100%;
+}
+h2{
+    font-weight: bolder;
+    color: #898dbf;
+}
+
+form{
+    width:550px;
+}
+
+form *{
+    font-weight: bold;
+}
+
+form label{
+    font-size: 18px;
+    color:#8f9096;
+}
+
+form .form-control,form .form-control:focus{
+    border-color:transparent;
+    border-bottom-color: #bebcc1;
+    box-shadow:none;
+}
+
+form .btn{ 
+    border-radius: 0px;
+    border-color: transparent;
+}
+
+.btn.btn-default{
+    background: #ebebeb;
+    color:#8f9096;
+}
+
+.btn.btn-primary{
+    background: #6c63ff;
+    color:white;
+}
+.sidebar {
+    height: 100vh !important;
+    bottom: 0;
+    padding-left:20px;
+    font-size: 1.3rem;
+    background: #6c63ff;
+}
+
+@media screen and (max-width:940px){
+    .sidebar{
+        font-size: 1rem;
+        padding-left :0px;
+    }
+}
+
+
+.sidebar .nav-link{
+    margin-bottom: 20px;
+    color:#dddce5;
+}
+
+.nav-link.active{
+    color:#fff;
+}
+
+.main > .row{
+    height: 100%;
+}
+
+@media screen and (max-width:768px){
+    .content{
+        padding-left:50px; 
+        width: 100%;
+        padding-top: 200px;
+        padding-bottom: 50px;
+    }
+    
+    form{
+        width: 100%;
+        margin:auto;
+    }
+    
+}
+
+.menu {
+    position: absolute;
+    right: 10%;
+    top:30px;
+    margin:auto;
+    display: none;  
+    cursor:pointer;
+    z-index: 5;
+    height: 33px;
+    width:30px;
+}
+
+.bar,.bar:after,.bar:before {
+    width:30px;
+    height:3px;
+    background: #6c63ff;
+    transition: all 0.2s;
+}
+
+.bar{
+    position: relative;
+}
+
+.bar:after {
+    position: absolute;
+    content: '';
+    left:0;
+    top:10px;
+    transition: top 0.2s 0.2s,transform 0.2s;
+}
+
+.bar:before {
+    position: absolute;
+    content: '';
+    left:0;
+    bottom:10px;
+    transition: bottom 0.2s 0.2s,transform 0.2s;
+}
+.bar.animate{
+    background: transparent;
+}
+.bar.animate:after{
+    top:0;
+    transform: rotate(45deg);
+    transition: top 0.2s ,transform 0.2s 0.2s;
+    background: #fff;
+}
+
+.bar.animate:before{
+    bottom:0;
+    transform: rotate(-45deg);
+    transition: bottom 0.2s,transform 0.2s  0.2s;
+    background: #fff;
+}
+
+.expand-menu {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: #6c63ff;
+    transition: width 0.5s;
+    width: 0%;
+}
+
+.expand-menu .nav-link{
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 20px;
+    color:#dddce5;
+    font-size:1.5rem;
+    display: none;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.expand-menu .nav-link.animate{
+    display: block;
+}
+
+.expand-menu .nav-link.animate-show{
+    opacity:1;
+}
+
+.expand-menu .nav-link.active{
+    color:#fff;
+}
+
+.expand-menu.animate{
+    width : 100%;
+}
+.navbar {
+    background-color: #da6d87 !important; 
+    color: white !important;
+    padding:2px 0px;
+}
+
+.btn-group{
+    background-color: #da6d87 ;
+}
+
+
+.navbar-brand  {
+    color: white !important;
+}
+a {
+    color: white !important;
+}
+.carousel {
+    width: 60% !important;
+    height: 40%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.logo {
+    height: 5%;
+    width: 5%;
+    margin-top: 0px;
+    background-color: aliceblue;
+    border-radius: 50%;
+}
+
+
+
+.btn-outline-success {
+    --bs-btn-hover-bg: #084298;
+    --bs-btn-border-color: white !important;
+    color:white !important;
+}
+.btn-group-vertical>.btn, .btn-group>.btn {
+    position: relative;
+    flex: 1 1 auto;
+    margin-left: 72%;
+    margin-right: 11%;
+}
+
+
+.dropimg {
+    width: 35%;
+    height: 110%;
+}
+
+.dropdown-menu[data-bs-popper] {
+    top: 100%;
+    left: 460px;
+    margin-top: var(--bs-dropdown-spacer);
+}
+
+.dropdown-item {
+    color: black !important;
+}
+
+
+
+
+
+
+
+
+
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(217, 207, 223) !important;
+    background-color: rgb(231 211 228 / 90%);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+  }
+
+.postbox {
+    background-color: aliceblue;
+    border: 2px solid red;
+    width: 50%;
+    margin-left: 26%;
+    padding: 1%;
+}
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ppost {
+  width: 100%;
+  margin-top: 3%;
+  padding: 1%;
+  background-color: #2d68c1;
+  border-color: #2d68c1;
+  border-radius: 2px;
+}

@@ -1,0 +1,66 @@
+{% extends "./navbar.html" %}
+{% block content %}
+      <link rel="stylesheet" href="/static/home.css" />
+    <link rel="stylesheet" href="/static/user.css" />
+  <div class="container mt-5">
+    
+    <div class="row d-flex boxm justify-content-center">
+        
+        <div class="col-md-7">
+            
+            <div class="card p-3">
+                
+                {% if pic %}
+                <div class="text-center">
+                  <img src="{{pic.url}}" width="100" class="rounded-circle">
+                </div>
+                {% else%}
+                <div class="text-center">
+                    <img src="/static/profile.jpg" width="100" class="rounded-circle">
+                </div>
+                {% endif %}
+                
+                <div class="text-center mt-3">
+                    <h5 class="mt-2 mb-0">{{name}}</h5>
+                    <span class="userid">{{userid}}</span>
+                   <!-- <p class="points">points</p>-->
+                    
+                    <div class=" box">
+                   
+                        <p class="head">Bio</p>
+                        <p>{{bio}}</p>
+                    
+                    </div>
+                    <div class="box">
+                      
+                      <p class="head">Skills</p>
+                      <p >{{skills}}</p>
+                    </div>
+                    
+                    <div class="buttons">
+                      <a class="btn btn-primary" style="background-color: #3b5998;" href="{{facebook}}" role="button"><i class="fab fa-facebook-f"></i></a>
+
+                      <!-- Twitter -->
+              <a class="btn btn-primary" style="background-color: #55acee;" href={{twitter}} role="button"><i class="fab fa-twitter"></i></a>
+              
+              <!-- Instagram -->
+              <a class="btn btn-primary" style="background-color: #ac2bac;" href={{instagram}} role="button"><i class="fab fa-instagram"></i></a>
+              
+              <!-- Linkedin -->
+              <a class="btn btn-primary" style="background-color: #0082ca;" href={{linkedin}}role="button"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    
+                    
+                </div>
+                
+               
+                
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+{% endblock %}

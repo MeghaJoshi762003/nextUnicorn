@@ -1,0 +1,261 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel = "icon" href = "/static/logo.png" = "image/x-icon">
+    <title>nextUnicorn</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    
+    <link rel="stylesheet" href="/static/startupsettings.css" />
+    <link rel="stylesheet" href="/static/user.css" />
+    
+    <script src="/static/usersettings.js"></script>
+  </head>
+  <body>
+    
+   <!-- <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid ">
+         <img class="logo" src="/static/logo.png" alt="logo">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Schemes</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link disabled">Articles</a>
+              </li>
+            </ul>
+            <div class="btn-group">
+              <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img class="dropimg" src="/static/pink.png">
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">View Profile</a></li>
+                <li><a class="dropdown-item" onclick="openNav()" >New post</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">About us</a></li>
+                <li><a class="dropdown-item" href="#">Log out</a></li>
+              </ul>
+            </div>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    -->
+     
+<div class="container-fluid main" style="height:100vh;padding-left:0px;">
+        
+    <div class="d-block d-md-none menu">
+
+        <div class="bar"></div>
+    
+    </div>
+    
+    
+    
+    <div class="row align-items-center" style="height:100%">
+
+    
+    <div class="col-md-9">
+        
+        <div class="container content clear-fix">
+    
+        <h2 class="mt-5 mb-5">Profile Settings</h2>
+        
+        <div class="row" style="height:100%">
+        
+            <div class="col-md-3">
+                {% if log2.profilepic %}
+                <div href=# class="d-inline"><img src="{{log2.profilepic.url}}" width=130px style="margin:0;">
+                {% else %}
+                <div href=# class="d-inline"><img src="/static/pink.png" width=130px style="margin:0;">
+                    {% endif %}<br><p class="pl-2 mt-2">
+                    
+                    
+                   
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Profile</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form method='post' action='editprofile' enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{form.as_p}}
+                                <input type='file' name='profile' /> 
+                            
+                          </div>
+                          <div class="modal-footer">
+                           
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div></p></div>
+                
+                
+            </div>
+            
+            <div class="col-md-9">
+                
+                <div class="container">
+                  <form method='post' action='startuplogo' enctype="multipart/form-data">
+                    {% csrf_token %}
+                        <div>
+                        <label for="inputTag" class="post-image" class="form-label">Edit picture
+                          <input id="inputTag" name="logo" class="form-control" type="file"/>
+                          </label>
+                          <div>
+                            <button type="submit" class="ppost" class="btn btn-primary">Upload</button>
+                            
+                          </div>
+                        </div>
+                      </form>
+
+                      <form method='post' action='startupcp' enctype="multipart/form-data">
+                        {% csrf_token %}
+                            <div>
+                            <label for="inputTag" class="post-image" class="form-label">Edit cover photo
+                              <input id="inputTag" name="cp" class="form-control" type="file"/>
+                              </label>
+                              <div>
+                                <button type="submit" class="ppost" class="btn btn-primary">Upload</button>
+                                
+                              </div>
+                            </div>
+                          </form>
+
+                          <form method='post' action='pitch' enctype="multipart/form-data">
+                            {% csrf_token %}
+                                <div>
+                                <label for="inputTag" class="post-image" class="form-label">Add pitch
+                                  <input id="inputTag" name="video" class="form-control" type="file"/>
+                                  </label>
+                                  <div>
+                                    <button type="submit" class="ppost" class="btn btn-primary">Upload</button>
+                                    
+                                  </div>
+                                </div>
+                              </form>
+
+                      <form method='post' action='startupsettings'>
+                        {% csrf_token %}
+                        <div class="form-group">
+
+                            <label for=fullName>Full Name</label>
+                            <input type="text" class="form-control" id="fullName" name="username">
+
+                        </div>
+                        
+                        <div class="form-group">
+
+                            <label for=pass>Password</label>
+                            <input type="password" class="form-control" id="pass" name="password" >
+
+                        </div>
+                        <div class="form-group">
+
+                          <label for=pass>phone number</label>
+                          <input type="text" class="form-control" id="phn" name="phoneno" >
+
+                      </div>
+                        <div class="form-group">
+
+                            <label for=bio>About</label>
+                            <input type="text" class="form-control" id="bio" name="about">
+
+                        </div>
+                        <div class="form-group">
+
+                            <label for=skills>Startup link</label>
+                            <input type="text" class="form-control" id="Skills" name="startuplink">
+
+                        </div>
+                        <div class="form-group">
+
+                            <label for=facebook>Facebook Url</label>
+                            <input type="link" class="form-control" id="facebook" name="facebook">
+
+                        </div>
+                        <div class="form-group">
+
+                            <label for=twitter>Twitter Url</label>
+                            <input type="link" class="form-control" id="twitter" name="twitter">
+
+                        </div>
+                        <div class="form-group">
+
+                            <label for=instagram>Instagram Url</label>
+                            <input type="link" class="form-control" id="instagram" name="instagram">
+
+                        </div>
+                        <div class="form-group">
+
+                            <label for=linkedin>Linkedin Url</label>
+                            <input type="link" class="form-control" id="linkedin" name="linkedin">
+
+                        </div>
+                        <div class="row mt-5">
+                        
+                            <div class="col">
+                            
+                                <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+                            
+                            </div>
+                        </div>
+
+                    </form>
+                
+                </div>
+            
+            </div>
+        
+        </div>
+    
+    </div>
+        
+    </div>
+
+</div>
+
+</div>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+
+
+
+
+
+    
